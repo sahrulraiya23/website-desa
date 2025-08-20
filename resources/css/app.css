@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.service-item-simple a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    background-color: #f8f9fa; /* Warna latar belakang */
+}
+
+.service-item-simple:hover a {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.service-item-simple .icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: var(--accent-color); /* Menggunakan warna aksen dari template */
+}
+
+.service-item-simple .title {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+}
