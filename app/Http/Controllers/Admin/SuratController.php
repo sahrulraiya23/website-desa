@@ -14,7 +14,7 @@ class SuratController extends Controller
     public function index()
     {
         $surats = Surat::with('user')->latest()->get();
-        return view('admin.surat.index', compact('surats'));
+        return view('admin.surat.surat', compact('surats'));
     }
 
     /**
