@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tambah Surat Baru - Website Desa Ulu Kalo')
+@section('title', 'Ajukan Surat Baru - Website Desa Ulu Kalo')
 
 @section('content')
     <main class="main">
@@ -9,8 +9,8 @@
                 <div class="container">
                     <div class="row d-flex justify-content-center text-center">
                         <div class="col-lg-8">
-                            <h1>Tambah Surat Baru</h1>
-                            <p class="mb-0">Isi form di bawah ini untuk menambahkan surat baru.</p>
+                            <h1>Form Pengajuan Surat</h1>
+                            <p class="mb-0">Isi form di bawah ini untuk mengajukan permohonan surat baru.</p>
                         </div>
                     </div>
                 </div>
@@ -22,40 +22,16 @@
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Form Tambah Surat</h5>
+                                <h5 class="card-title">Detail Permohonan Surat</h5>
 
                                 <form method="POST" action="{{ route('surat.store') }}">
                                     @csrf
 
                                     <div class="row gy-4">
-                                        <div class="col-md-6">
-                                            <label for="nomor_surat" class="form-label">Nomor Surat</label>
-                                            <input type="text" name="nomor_surat" class="form-control" id="nomor_surat"
-                                                required>
-                                        </div>
-
-                                        <div class="col-md-6">
-                                            <label for="tanggal_surat" class="form-label">Tanggal Surat</label>
-                                            <input type="date" class="form-control" name="tanggal_surat"
-                                                id="tanggal_surat" required>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <label for="pengirim" class="form-label">Pengirim</label>
-                                            <input type="text" class="form-control" name="pengirim" id="pengirim"
-                                                required>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <label for="perihal" class="form-label">Perihal</label>
-                                            <input type="text" class="form-control" name="perihal" id="perihal"
-                                                required>
-                                        </div>
-
                                         <div class="col-md-12">
                                             <label for="jenis_surat" class="form-label">Jenis Surat</label>
                                             <select name="jenis_surat" id="jenis_surat" class="form-select" required>
-                                                <option selected disabled value="">Pilih...</option>
+                                                <option selected disabled value="">Pilih jenis surat...</option>
                                                 <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
                                                 <option value="Surat Keterangan Tidak Mampu">Surat Keterangan Tidak Mampu
                                                 </option>
@@ -66,8 +42,22 @@
                                             </select>
                                         </div>
 
+                                        <div class="col-md-12">
+                                            <label for="perihal" class="form-label">Perihal</label>
+                                            <input type="text" class="form-control" name="perihal" id="perihal"
+                                                required
+                                                placeholder="Contoh: Permohonan untuk membuka usaha toko kelontong">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label for="keterangan_pemohon" class="form-label">Keterangan /
+                                                Keperluan</label>
+                                            <textarea class="form-control" name="keterangan_pemohon" id="keterangan_pemohon" rows="5" required
+                                                placeholder="Jelaskan secara singkat keperluan Anda mengajukan surat ini."></textarea>
+                                        </div>
+
                                         <div class="col-md-12 text-center">
-                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                            <button type="submit" class="btn btn-primary">Kirim Pengajuan</button>
                                         </div>
                                     </div>
                                 </form>
