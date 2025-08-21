@@ -1,6 +1,7 @@
 <?php
-// routes/web.php
+
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SuratController; // Import SuratController
 use Illuminate\Support\Facades\Route;
 
 // Public Routes
@@ -20,5 +21,13 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('village-structures', App\Http\Controllers\Admin\VillageStructureController::class);
     Route::resource('village-potentials', App\Http\Controllers\Admin\VillagePotentialController::class);
 });
+
+// Routes untuk Layanan Surat (membutuhkan login)
+Route::middleware(['auth'])->group(function () {
+    Route::get('/surat', [SuratController::class, 'index'])->name('surat.index');
+    Route::get('/surat/create', [SuratController::class, 'create'])->name('surat.create');
+    Route::post('/surat', [SuratController::class, 'store'])->name('surat.store');
+});
+
 
 require __DIR__ . '/auth.php';

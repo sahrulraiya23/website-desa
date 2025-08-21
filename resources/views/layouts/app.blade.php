@@ -38,7 +38,6 @@
             <a href="{{ route('home') }}" class="logo d-flex align-items-center me-auto">
                 <h1 class="sitename">Desa Ulu Kalo</h1>
             </a>
-
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="{{ route('home') }}"
@@ -53,6 +52,11 @@
                             class="{{ request()->routeIs('struktur') ? 'active' : '' }}">Struktur Desa</a></li>
                     <li><a href="{{ route('potensi') }}"
                             class="{{ request()->routeIs('potensi') ? 'active' : '' }}">Potensi</a></li>
+
+                    {{-- INI BARIS YANG DITAMBAHKAN --}}
+                    <li><a href="{{ route('surat.index') }}"
+                            class="{{ request()->routeIs('surat.index') ? 'active' : '' }}">Layanan Surat</a></li>
+
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
